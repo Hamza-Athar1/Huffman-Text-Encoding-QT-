@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* General Styles */
+* {
+    font-family: &quot;Arial&quot;, sans-serif;
+    font-size: 14px;
+}
+
+/* Push Buttons */
+QPushButton#browseButton, QPushButton#compressButton, QPushButton#decompressButton {
+    background-color: #1e2f3a; /* Dark Blue Background */
+    color: #ffffff; /* White Text */
+    border: 2px solid #1a5a87; /* Border to complement the color scheme */
+    border-radius: 8px; /* Rounded Corners */
+    padding: 8px 16px; /* Padding for better appearance */
+}
+
+QPushButton#browseButton:hover, QPushButton#compressButton:hover, QPushButton#decompressButton:hover {
+    background-color: #1a5a87; /* Lighter blue on hover */
+}
+
+QPushButton#browseButton:pressed, QPushButton#compressButton:pressed, QPushButton#decompressButton:pressed {
+    background-color: #123d5c; /* Even darker blue when pressed */
+}
+
+/* Heading Label */
+QLabel {
+    font-size: 24px; /* Larger font size for the heading */
+    font-weight: bold;
+    color: #1e2f3a; /* Dark Blue Text */
+    background-color: transparent; /* No background for text label */
+    text-align: center;
+}
+
+/* Progress Bar */
+QProgressBar {
+    background-color: #d9e6f2; /* Light Blue Background */
+    border: 2px solid #1e2f3a; /* Dark Blue Border */
+    border-radius: 8px;
+    text-align: center;
+    color: #1e2f3a; /* Dark Blue Text */
+}
+
+QProgressBar::chunk {
+    background-color: #1a5a87; /* Darker Blue for the progress chunk */
+    border-radius: 6px;
+}
+
+/* Text Browser */
+QTextBrowser {
+    background-color: #f8f9fa; /* Light Gray Background */
+    border: 2px solid #1e2f3a; /* Dark Blue Border */
+    border-radius: 8px;
+    padding: 8px;
+    color: #1e2f3a; /* Dark Blue Text */
+}
+
+QTextBrowser QScrollBar:vertical, QTextBrowser QScrollBar:horizontal {
+    background-color: #d9e6f2; /* Light Blue Scrollbar Background */
+    border: 1px solid #1e2f3a; /* Dark Blue Border */
+    width: 12px;
+    height: 12px;
+}
+
+QTextBrowser QScrollBar::handle {
+    background-color: #1a5a87; /* Dark Blue Scrollbar Handle */
+    border-radius: 6px;
+}
+
+QTextBrowser QScrollBar::handle:hover {
+    background-color: #123d5c; /* Darker Blue Handle on Hover */
+}
+
+QTextBrowser QScrollBar::add-line, QTextBrowser QScrollBar::sub-line {
+    background-color: #1e2f3a; /* Dark Blue Arrows */
+    border: none;
+}
+
+QTextBrowser QScrollBar::add-line:hover, QTextBrowser QScrollBar::sub-line:hover {
+    background-color: #1a5a87; /* Hover State for Arrows */
+}
+
+QTextBrowser QScrollBar::up-arrow, QTextBrowser QScrollBar::down-arrow,
+QTextBrowser QScrollBar::left-arrow, QTextBrowser QScrollBar::right-arrow {
+    width: 10px;
+    height: 10px;
+    background: #ffffff; /* White Arrows */
+}
+
+QTextBrowser QScrollBar::add-page, QTextBrowser QScrollBar::sub-page {
+    background: none; /* Transparent pages */
+}
+/* MessageBox Styles */
+QMessageBox {
+    background-color: #f8f9fa; /* Light Gray Background */
+    color: #1e2f3a; /* Dark Blue Text */
+}
+
+/* MessageBox Text */
+QMessageBox QLabel {
+    color: #1e2f3a; /* Ensure text color is dark blue */
+}
+
+/* MessageBox Button */
+QMessageBox QPushButton {
+    background-color: #1e2f3a; /* Dark Blue Background for buttons */
+    color: #ffffff; /* White Text */
+    border: 2px solid #1a5a87; /* Dark Blue Border */
+    border-radius: 8px; /* Rounded Corners */
+    padding: 8px 16px; /* Padding for buttons */
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #1a5a87; /* Lighter blue on hover */
+}
+
+QMessageBox QPushButton:pressed {
+    background-color: #123d5c; /* Even darker blue when pressed */
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">
+#centralwidget {
+border-image: url(:/Pictures/MainWinBack.jpg);
+}
+</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>-10</y>
+      <width>591</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Efficient Compression and Decompression System</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>861</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QTextBrowser" name="textBrowser">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="browseButton">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>520</y>
+      <width>86</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string> Browse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="compressionRatioLabel">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>430</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Compression Ratio:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>200</y>
+      <width>201</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QPushButton" name="decompressButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Decompress</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="compressButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Compress</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
